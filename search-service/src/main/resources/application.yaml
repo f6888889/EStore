@@ -1,0 +1,24 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: search-service
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      server-addr: 192.168.11.135:8848
+  rabbitmq:
+    host: 192.168.11.135 # 你的虚拟机IP
+    port: 5672 # 端口
+    virtual-host: /hmall # 虚拟主机
+    username: hmall # 用户名
+    password: 123 # 密码
+hm:
+  swagger:
+    title: 购物车服务接口文档
+    package: com.hmall.search.controller
+  db:
+    database: hm-item
+
+# keytool -genkeypair -alias hmall -keyalg RSA -keypass hmall123 -keystore hmall.jks -storepass hmall123
